@@ -8,7 +8,7 @@ class Counter extends Component {
         counter: 0
     }
 
-    counterChangedHandler = ( action, value ) => {
+    counterChangedHandler = ( action, value ) => {// eslint-disable-next-line
         switch ( action ) {
             case 'inc':
                 this.setState( ( prevState ) => { return { counter: prevState.counter + 1 } } )

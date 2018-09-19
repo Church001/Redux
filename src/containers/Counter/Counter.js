@@ -38,7 +38,9 @@ class Counter extends Component {
                 <hr />
                 <button onClick={this.props.onShowResult}>STORE RESULT</button>
                 <ul>
-                    <li onClick={this.props.onDelete}></li>
+                    {this.props.storedResults.map(strResults => {
+                        <li onClick={this.props.onDelete} key={strResults.id}>{strResults.value}</li>
+                    })}
                 </ul>
             </div>
         );
@@ -47,7 +49,8 @@ class Counter extends Component {
 
 const mapStateToProps = state => {
     return {
-        count: state.counter
+        count: state.counter,
+        storedResults: state.results
     };
 };
  // eslint-disable-next-line

@@ -32,9 +32,9 @@ class Counter extends Component {
             <div>
                 <CounterOutput value={this.props.count} />
                 <CounterControl label="Increment" clicked={this.props.onIncrement} />
-                <CounterControl label="Decrement" clicked={() => this.counterChangedHandler( 'dec' )}  />
-                <CounterControl label="Add 5" clicked={() => this.counterChangedHandler( 'add', 5 )}  />
-                <CounterControl label="Subtract 5" clicked={() => this.counterChangedHandler( 'sub', 5 )}  />
+                <CounterControl label="Decrement" clicked={this.props.onDecrement}  />
+                <CounterControl label="Add 5" clicked={this.props.onAddCounter}  />
+                <CounterControl label="Subtract 5" clicked={this.props.onSubtractCounter}  />
             </div>
         );
     }
@@ -48,7 +48,10 @@ const mapStateToProps = state => {
  // eslint-disable-next-line
 const mapDispatchToProps = dispatch => {
     return {
-        onIncrement: () => dispatch({type: 'INCREMENT'})
+        onIncrement: () => dispatch({type: 'INCREMENT'}),
+        onDecrement: () => dispatch({type: 'DECREMENT'}),
+        onAddCounter: () => dispatch({type: 'ADD'}),
+        onSubtractCounter: () => dispatch({type: 'SUBTRACT'})
     };
 };
 

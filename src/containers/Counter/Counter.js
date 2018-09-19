@@ -33,8 +33,8 @@ class Counter extends Component {
                 <CounterOutput value={this.props.count} />
                 <CounterControl label="Increment" clicked={this.props.onIncrement} />
                 <CounterControl label="Decrement" clicked={this.props.onDecrement}  />
-                <CounterControl label="Add 5" clicked={this.props.onAddCounter}  />
-                <CounterControl label="Subtract 5" clicked={this.props.onSubtractCounter}  />
+                <CounterControl label="Add 10" clicked={this.props.onAddCounter}  />
+                <CounterControl label="Subtract 8" clicked={this.props.onSubtractCounter}  />
                 <hr />
                 <button onClick={this.props.onShowResult}>STORE RESULT</button>
                 <ul>

@@ -54,8 +54,8 @@ class Counter extends Component {
 
 const mapStateToProps = state => {
     return {
-        count: state.counter,
-        storedResults: state.results
+        count: state.count.counter,
+        storedResults: state.result.results
     };
 };
  // eslint-disable-next-line

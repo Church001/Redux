@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import CounterControl from '../../components/CounterControl/CounterControl';
 import CounterOutput from '../../components/CounterOutput/CounterOutput';
+import * as actionTypes from '../../store/actions';
 
 class Counter extends Component {
     state = {
@@ -60,12 +61,12 @@ const mapStateToProps = state => {
  // eslint-disable-next-line
 const mapDispatchToProps = dispatch => {
     return {
-        onIncrement: () => dispatch({type: 'INCREMENT'}),
-        onDecrement: () => dispatch({type: 'DECREMENT'}),
-        onAddCounter: () => dispatch({type: 'ADD', payload: {value: 10}}),
-        onSubtractCounter: () => dispatch({type: 'SUBTRACT', payload: {value: 8}}),
-        onShowResult: () => dispatch({type: 'SHOW_RESULT'}),
-        onDelete: (id) => dispatch({type: 'DELETE_RESULT', resultElId: id})
+        onIncrement: () => dispatch({type: actionTypes.INCREMENT}),
+        onDecrement: () => dispatch({type: actionTypes.DECREMENT}),
+        onAddCounter: () => dispatch({type: actionTypes.ADD, payload: {value: 10}}),
+        onSubtractCounter: () => dispatch({type: actionTypes.SUBTRACT, payload: {value: 8}}),
+        onShowResult: () => dispatch({type: actionTypes.SHOW_RESULT}),
+        onDelete: (id) => dispatch({type: actionTypes.DELETE_RESULT, resultElId: id})
     };
 };
 

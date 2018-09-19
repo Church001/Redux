@@ -28,7 +28,8 @@ const reducer = ( state = initialState, action ) => {
 			}
 		case 'SHOW_RESULT':
 			return {
-
+				...state,
+				results: state.results.concat(state.counter)
 			}
 		case 'DELETE_RESULT':
 			return {
